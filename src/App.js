@@ -1,7 +1,13 @@
 import React from "react";
+import SampleTreeImage from "static/sample-tree.jpg";
 
 const App = () => {
-  return <h3>Hello World, A basic react boilerPlate</h3>;
+  return (
+    <div className={"app"}>
+      <h3>Hello World, A basic react boilerPlate</h3>
+      <img src={SampleTreeImage} />
+    </div>
+  );
 };
 
 export default App;

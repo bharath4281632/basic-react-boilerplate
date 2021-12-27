@@ -10,6 +10,7 @@ module.exports = {
     modules: [path.join(__dirname, "src"), "node_modules"],
     alias: {
       react: path.join(__dirname, "node_modules", "react"),
+      static: path.resolve(__dirname, "static"),
     },
   },
   module: {
@@ -29,6 +30,30 @@ module.exports = {
           },
           {
             loader: "css-loader",
+          },
+        ],
+      },
+      {
+        test: /\.(jpg|png|gif|svg)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              outputPath: "assets/images/",
+            },
+          },
+        ],
+      },
+
+      // Fonts
+      {
+        test: /\.(ttf|eot|woff|woff2)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              outputPath: "assets/fonts/",
+            },
           },
         ],
       },
